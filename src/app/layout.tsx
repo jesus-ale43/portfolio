@@ -1,10 +1,12 @@
 import './globals.css';
 
 import type { Metadata, Viewport } from 'next';
-import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { Geist } from 'next/font/google';
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+import { ThemeProvider } from '@/context/theme-provider';
+import { cn } from '@/lib/utils';
+
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jesusale.com'),
@@ -73,8 +75,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn('antialiased', 'font-sans', geist.variable)}
+    >
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
