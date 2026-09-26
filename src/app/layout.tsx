@@ -1,6 +1,6 @@
 import './globals.css';
 
-import type { Metadata, Viewport } from 'next';
+import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 
 import { LenisProvider } from '@/context/lenis-provider';
@@ -65,13 +65,6 @@ export const metadata: Metadata = {
       { url: '/favicon-dark.png', media: '(prefers-color-scheme: light)' },
     ],
   },
-};
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  themeColor: '#ffffff',
-  colorScheme: 'light',
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
