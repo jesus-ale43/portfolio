@@ -43,7 +43,7 @@ function ThemeHotkey() {
         return;
       }
 
-      if (event.metaKey || event.ctrlKey || event.altKey) {
+      if (!event.shiftKey || event.metaKey || event.ctrlKey || event.altKey) {
         return;
       }
 
