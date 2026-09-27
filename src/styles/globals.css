@@ -101,4 +101,48 @@
   .lucide {
     stroke-width: 1.5;
   }
+
+  #cursor-ring::after {
+    position: absolute;
+    inset: -1px;
+    border: 1px solid color-mix(in srgb, var(--foreground) 45%, transparent);
+    border-radius: inherit;
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @keyframes cursor-ripple {
+    0% {
+      opacity: 0.6;
+      transform: scale(0.9);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(2.2);
+    }
+  }
+}
+
+@layer utilities {
+  #cursor-ring.is-clicking {
+    animation: none;
+  }
+
+  #cursor-ring.is-clicking::after {
+    animation: cursor-ripple 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html.has-smooth-cursor,
+  html.has-smooth-cursor * {
+    cursor: none;
+  }
+}
+
+#cursor-ring.is-active {
+  border-color: color-mix(in srgb, var(--foreground) 70%, transparent);
+  background-color: color-mix(in srgb, var(--foreground) 6%, transparent);
 }

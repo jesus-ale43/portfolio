@@ -10,6 +10,7 @@ import {
 } from 'next/font/google';
 import { getLocale } from 'next-intl/server';
 
+import SmoothCursor from '@/components/layout/smooth-cursor';
 import { LenisProvider } from '@/context/lenis-provider';
 import { ThemeProvider } from '@/context/theme-provider';
 import { cn } from '@/lib/utils';
@@ -110,6 +111,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
       )}
     >
       <body>
+        <SmoothCursor />
         <ThemeProvider>
           <LenisProvider>{children}</LenisProvider>
         </ThemeProvider>
