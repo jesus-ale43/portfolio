@@ -1,10 +1,39 @@
-import './globals.css';
+import '@/styles/globals.css';
+import 'lenis/dist/lenis.css';
 
 import type { Metadata } from 'next';
+
+import {
+  Instrument_Serif,
+  JetBrains_Mono,
+  Plus_Jakarta_Sans,
+} from 'next/font/google';
 
 import { LenisProvider } from '@/context/lenis-provider';
 import { ThemeProvider } from '@/context/theme-provider';
 import { cn } from '@/lib/utils';
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-jakarta',
+  display: 'swap',
+});
+
+const instrument = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-instrument',
+  display: 'swap',
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jesusale.com'),
@@ -13,7 +42,6 @@ export const metadata: Metadata = {
     default: 'Jesús Alejandro · Web Developer',
     template: '%s · Jesús Alejandro',
   },
-
   description: 'Developer and industrial automation student.',
 
   authors: [
@@ -69,7 +97,12 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn('antialiased')}
+      className={cn(
+        jakarta.variable,
+        instrument.variable,
+        jetbrains.variable,
+        'antialiased',
+      )}
     >
       <body>
         <ThemeProvider>
