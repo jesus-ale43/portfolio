@@ -13,6 +13,8 @@ import { LenisProvider } from '@/context/lenis-provider';
 import { ThemeProvider } from '@/context/theme-provider';
 import { cn } from '@/lib/utils';
 
+import { getLocale } from 'next-intl/server';
+
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
@@ -92,10 +94,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<'/'>) {
+export default async function RootLayout({ children }: LayoutProps<'/'>) {
+  const locale = await getLocale();
+
   return (
     <html
-      lang="en"
+      lang={locale}
       suppressHydrationWarning
       className={cn(
         jakarta.variable,
@@ -104,7 +108,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         'antialiased',
       )}
     >
-      <body>
+      <body className="transition-colors duration-500">
         <ThemeProvider>
           <LenisProvider>{children}</LenisProvider>
         </ThemeProvider>

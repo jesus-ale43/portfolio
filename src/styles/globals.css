@@ -74,10 +74,10 @@
 
   button:disabled,
   a[aria-disabled="true"],
-  input[type="submit"]:disabled {
+  input[type="submit"]:disabled,
+  select:disabled {
     cursor: not-allowed;
   }
-
   ::selection {
     background-color: var(--foreground);
     color: var(--background);
