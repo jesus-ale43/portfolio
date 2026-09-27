@@ -1,19 +1,18 @@
 import '@/styles/globals.css';
 import 'lenis/dist/lenis.css';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
-
 import {
   Instrument_Serif,
   JetBrains_Mono,
   Plus_Jakarta_Sans,
 } from 'next/font/google';
+import { getLocale } from 'next-intl/server';
 
 import { LenisProvider } from '@/context/lenis-provider';
 import { ThemeProvider } from '@/context/theme-provider';
 import { cn } from '@/lib/utils';
-
-import { getLocale } from 'next-intl/server';
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -37,37 +36,41 @@ const jetbrains = JetBrains_Mono({
   display: 'swap',
 });
 
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://jesusale.com'),
-
   title: {
     default: 'Jesús Alejandro · Web Developer',
     template: '%s · Jesús Alejandro',
   },
   description: 'Developer and industrial automation student.',
-
   authors: [
     {
       name: 'Jesús Alejandro',
       url: 'https://jesusale.com',
     },
   ],
-
   alternates: {
     canonical: '/',
   },
-
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
-
   openGraph: {
     title: 'Jesús Alejandro · Web Developer',
     description: 'Developer and industrial automation student.',
     url: 'https://jesusale.com',
     siteName: 'Jesús Alejandro Portfolio',
     locale: 'en_US',
+    alternateLocale: ['es_ES', 'es_MX', 'pt_BR', 'pt_PT'],
     type: 'website',
     images: [
       {
@@ -78,14 +81,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-
   twitter: {
     card: 'summary_large_image',
     title: 'Jesús Alejandro · Web Developer',
     description: 'Developer and industrial automation student.',
     images: ['/og-image.webp'],
   },
-
   icons: {
     icon: [
       { url: '/favicon.png', media: '(prefers-color-scheme: dark)' },
@@ -108,11 +109,12 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
         'antialiased',
       )}
     >
-      <body className="transition-colors duration-500">
+      <body>
         <ThemeProvider>
           <LenisProvider>{children}</LenisProvider>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
     </html>
   );
 }
