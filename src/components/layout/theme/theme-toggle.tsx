@@ -9,12 +9,13 @@ import { cn } from '@/lib/utils';
 
 export default function ThemeToggle() {
   const t = useTranslations('theme');
-  const { theme, toggleTheme, mounted } = useThemeToggle();
+  const { resolvedTheme, toggleTheme, mounted } = useThemeToggle();
 
   return (
     <Button
       type="button"
       onClick={toggleTheme}
+      disabled={!mounted}
       aria-label={t('toggle')}
       className={cn(
         'flex size-7 shrink-0 items-center justify-center leading-none',
@@ -22,10 +23,12 @@ export default function ThemeToggle() {
         'hover:text-foreground active:scale-90',
         'focus:outline-none focus-visible:ring-1 focus-visible:ring-foreground/40',
         'focus-visible:ring-offset-2 focus-visible:ring-offset-background',
-        mounted ? 'opacity-100' : 'opacity-0',
+        mounted ? 'opacity-100' : 'pointer-events-none opacity-0',
       )}
     >
-      {theme === 'light' ? (
+      {!mounted ? (
+        <span className="block size-3.5" aria-hidden="true" />
+      ) : resolvedTheme === 'light' ? (
         <Moon className="size-3.5" />
       ) : (
         <Sun className="size-3.5" />
