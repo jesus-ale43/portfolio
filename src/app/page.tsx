@@ -7,30 +7,16 @@ export default async function Home() {
   const t = await getTranslations('home');
 
   return (
-    <main>
-      <section>
-        <p>{t('construction')}</p>
+    <section className="container-px pt-24 flex flex-col items-center justify-center gap-4">
+      <p>{t('construction')}</p>
 
-        <a
-          href="https://www.instagram.com/jesus_ale43/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {t('instagram')}
-        </a>
-      </section>
-
-      <br />
-      <br />
-
-      <section>
-        <p>{t('language')}</p>
-
-        <LocaleSwitcher />
-        <br />
-        <br />
-        <ThemeToggle />
-      </section>
-    </main>
+      <a
+        href="https://www.instagram.com/jesus_ale43/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {t('instagram')}
+      </a>
+    </section>
   );
 }
