@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://jesusale.com',
       lastModified: LAST_MODIFIED,
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: 1,
     },
   ];
