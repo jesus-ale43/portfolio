@@ -107,12 +107,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
     <html
       lang={locale}
       suppressHydrationWarning
-      className={cn(
-        jakarta.variable,
-        instrument.variable,
-        jetbrains.variable,
-        'antialiased',
-      )}
+      className={cn(jakarta.variable, instrument.variable, jetbrains.variable)}
     >
       <body>
         <IntlProvider
