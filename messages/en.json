@@ -10,8 +10,20 @@
     "toggle": "Toggle theme"
   },
   "home": {
-    "construction": "It's under construction lol",
-    "instagram": "Say hello on Instagram",
-    "language": "Change the language:"
+    "hero": {
+      "about": {
+        "label": "DESIGN PHILOSOPHY // 01",
+        "description": "Web developer crafting thoughtful digital surfaces, quiet interactions, and tactile web experiences that bridge computational logic with editorial tension.",
+        "capabilities": {
+          "label": "Core capabilities",
+          "items": [
+            "Creative Dev",
+            "Three.js / WebGL",
+            "Design Systems",
+            "Sound & Haptics"
+          ]
+        }
+      }
+    }
   }
 }

@@ -10,8 +10,20 @@
     "toggle": "Alternar tema"
   },
   "home": {
-    "construction": "Ainda em construção kk",
-    "instagram": "Manda um oi no Instagram",
-    "language": "Muda o idioma:"
+    "hero": {
+      "about": {
+        "label": "FILOSOFIA DE DESIGN // 01",
+        "description": "Desenvolvedor web que cria superfícies digitais cuidadosas, interações sutis e experiências web táteis que conectam a lógica computacional à tensão editorial.",
+        "capabilities": {
+          "label": "Competências principais",
+          "items": [
+            "Desenvolvimento criativo",
+            "Three.js / WebGL",
+            "Sistemas de design",
+            "Som e háptica"
+          ]
+        }
+      }
+    }
   }
 }

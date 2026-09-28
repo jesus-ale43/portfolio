@@ -12,6 +12,7 @@
   --color-secondary: var(--secondary);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --background-image-hero-halo: var(--hero-halo);
 
   --container-wide: 107.5rem;
   --text-micro: 0.6875rem;
@@ -29,6 +30,14 @@
   --muted: #a1a4ac;
   --accent: #c4beaf;
   --border: #23262e;
+  --hero-halo: radial-gradient(
+    circle,
+    #3ca9d46b 0%,
+    #2874a659 28%,
+    #1a527638 50%,
+    #0e3d591f 68%,
+    transparent 80%
+  );
 }
 
 /* Light Theme */
@@ -41,6 +50,14 @@
   --muted: #5f6b74;
   --accent: #6f6553;
   --border: #ded9cf;
+  --hero-halo: radial-gradient(
+    circle,
+    #6f655380 0%,
+    #95866b66 28%,
+    #b4a47b42 50%,
+    #c8b98d26 68%,
+    transparent 80%
+  );
 }
 
 @keyframes cursor-ripple {
@@ -129,6 +146,10 @@
 }
 
 @layer components {
+  .font-editorial {
+    letter-spacing: -0.025em;
+  }
+
   .container-px {
     @apply mx-auto w-full px-6 lg:px-14;
     max-width: var(--container-wide);
