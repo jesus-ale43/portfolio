@@ -136,8 +136,18 @@ export default function SmoothCursor() {
     };
 
     window.addEventListener('mousemove', onMove, { passive: true });
-    window.addEventListener('mousedown', onPressStart, { passive: true });
-    window.addEventListener('mouseup', onPressEnd, { passive: true });
+    document.addEventListener('pointerdown', onPressStart, {
+      capture: true,
+      passive: true,
+    });
+    document.addEventListener('pointerup', onPressEnd, {
+      capture: true,
+      passive: true,
+    });
+    document.addEventListener('pointercancel', onPressEnd, {
+      capture: true,
+      passive: true,
+    });
     document.addEventListener('mouseover', onOver, { passive: true });
     document.addEventListener('mouseout', onOut, { passive: true });
 
@@ -146,8 +156,9 @@ export default function SmoothCursor() {
       gsap.killTweensOf([dot, ring]);
       gsap.killTweensOf(ringVisual);
       window.removeEventListener('mousemove', onMove);
-      window.removeEventListener('mousedown', onPressStart);
-      window.removeEventListener('mouseup', onPressEnd);
+      document.removeEventListener('pointerdown', onPressStart, true);
+      document.removeEventListener('pointerup', onPressEnd, true);
+      document.removeEventListener('pointercancel', onPressEnd, true);
       document.removeEventListener('mouseover', onOver);
       document.removeEventListener('mouseout', onOut);
       document.documentElement.classList.remove('has-smooth-cursor');
