@@ -40,7 +40,7 @@ const jetbrains = JetBrains_Mono({
   display: 'swap',
 });
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID ?? '';
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jesusale.com'),
@@ -124,7 +124,9 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
         </IntlProvider>
 
         <SmoothCursor />
-        <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
+        {GA_MEASUREMENT_ID ? (
+          <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
+        ) : null}
       </body>
     </html>
   );
