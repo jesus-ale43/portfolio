@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <header
       id="header"
-      className="fixed inset-x-0 top-0 z-50 border-b border-border/50 bg-background/85 backdrop-blur-md py-2.5"
+      className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md py-2.5"
     >
       <nav
         id="header-container"
@@ -48,12 +48,12 @@ export default function Header() {
             JESÚS ALEJANDRO
           </Link>
           <span className="hidden text-border sm:inline">/</span>
-          <span className="hidden text-muted/75 sm:inline">{t('role')}</span>
+          <span className="hidden text-muted sm:inline">{t('role')}</span>
         </div>
 
         <div className="flex items-center gap-8 micro-label leading-none">
           <div className="hidden md:flex items-center gap-2">
-            <span className="text-muted/75">JOINVILLE, BR</span>
+            <span className="text-muted">JOINVILLE, BR</span>
             <span id="clock" className="font-mono text-foreground leading-none">
               {time ?? '12:00:00'}
             </span>
