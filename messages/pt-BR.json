@@ -1,4 +1,14 @@
 {
+  "header": {
+    "role": "DESENVOLVEDOR WEB",
+    "availability": "DISPONÍVEL PARA NOVOS PROJETOS"
+  },
+  "language": {
+    "change": "Mudar idioma"
+  },
+  "theme": {
+    "toggle": "Alternar tema"
+  },
   "home": {
     "construction": "Ainda em construção kk",
     "instagram": "Manda um oi no Instagram",

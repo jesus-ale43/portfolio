@@ -1,4 +1,14 @@
 {
+  "header": {
+    "role": "WEB DEVELOPER",
+    "availability": "AVAILABLE FOR NEW PROJECTS"
+  },
+  "language": {
+    "change": "Change language"
+  },
+  "theme": {
+    "toggle": "Toggle theme"
+  },
   "home": {
     "construction": "It's under construction lol",
     "instagram": "Say hello on Instagram",

@@ -1,4 +1,14 @@
 {
+  "header": {
+    "role": "DESARROLLADOR WEB",
+    "availability": "DISPONIBLE PARA NUEVOS PROYECTOS"
+  },
+  "language": {
+    "change": "Cambiar idioma"
+  },
+  "theme": {
+    "toggle": "Cambiar tema"
+  },
   "home": {
     "construction": "Todavía está en construcción xd",
     "instagram": "Saludame por Instagram",
