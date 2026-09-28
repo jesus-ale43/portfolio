@@ -40,7 +40,13 @@ export default function LocaleSwitcher() {
         type="button"
         disabled={isTransitioning}
         aria-label={t('change')}
-        className="flex size-7 shrink-0 items-center justify-center leading-none text-muted transition-colors hover:text-foreground focus:outline-none focus-visible:outline-none focus-visible:ring-0"
+        className={cn(
+          'flex size-7 shrink-0 items-center justify-center leading-none',
+          'text-muted transition-[opacity,transform,color] duration-300 ease-out',
+          'hover:text-foreground active:scale-90',
+          'focus:outline-none focus-visible:outline-none focus-visible:ring-0',
+          isTransitioning && 'pointer-events-none opacity-50',
+        )}
       >
         <Languages className="block size-3.5" />
       </MenuButton>
