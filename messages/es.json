@@ -12,15 +12,17 @@
   "home": {
     "hero": {
       "about": {
-        "label": "FILOSOFÍA DE DISEÑO // 01",
-        "description": "Desarrollador web que crea superficies digitales cuidadas, interacciones sutiles y experiencias web táctiles que conectan la lógica computacional con la tensión editorial.",
+        "label": "SOBRE MÍ // 01",
+        "description": "Desarrollador full stack trabajando entre software, interfaces y experiencias interactivas. Me gusta llevar las ideas del concepto a algo útil, pulido y funcional.",
         "capabilities": {
-          "label": "Competencias principales",
+          "label": "STACK / HERRAMIENTAS",
           "items": [
-            "Desarrollo creativo",
+            "React / Astro / TypeScript",
+            "Node.js / APIs / Bases de datos",
+            "IA / Integraciones con LLM",
             "Three.js / WebGL",
-            "Sistemas de diseño",
-            "Sonido y háptica"
+            "PHP / WordPress",
+            "Python / C++ / Rust / Lua"
           ]
         }
       }
