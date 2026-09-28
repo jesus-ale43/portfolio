@@ -15,6 +15,7 @@ import SmoothCursor from '@/components/layout/smooth-cursor';
 import { IntlProvider } from '@/context/intl-provider';
 import { LenisProvider } from '@/context/lenis-provider';
 import { ThemeProvider } from '@/context/theme-provider';
+import { defaultTimeZone } from '@/i18n/config';
 import { cn } from '@/lib/utils';
 
 const jakarta = Plus_Jakarta_Sans({
@@ -114,8 +115,11 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
       )}
     >
       <body>
-        <IntlProvider locale={locale} messages={messages}>
-          <SmoothCursor />
+        <IntlProvider
+          locale={locale}
+          timeZone={defaultTimeZone}
+          messages={messages}
+        >
           <ThemeProvider>
             <LenisProvider>
               <Header />
@@ -123,6 +127,8 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
             </LenisProvider>
           </ThemeProvider>
         </IntlProvider>
+
+        <SmoothCursor />
       </body>
       <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
     </html>

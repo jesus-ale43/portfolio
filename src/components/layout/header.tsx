@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 import LocaleSwitcher from '@/components/layout/i18n/locale-switcher';
 import ThemeToggle from '@/components/layout/theme/theme-toggle';
+import { defaultTimeZone } from '@/i18n/config';
 
 export default function Header() {
   const locale = useLocale();
@@ -13,7 +14,7 @@ export default function Header() {
 
   useEffect(() => {
     const formatter = new Intl.DateTimeFormat(locale, {
-      timeZone: 'America/Sao_Paulo',
+      timeZone: defaultTimeZone,
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',

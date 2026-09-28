@@ -7,3 +7,5 @@ export const locales = [
 export type Locale = (typeof locales)[number]['code'];
 
 export const defaultLocale: Locale = 'en';
+
+export const defaultTimeZone = 'America/Sao_Paulo';
