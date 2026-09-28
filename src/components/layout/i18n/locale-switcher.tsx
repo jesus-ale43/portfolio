@@ -3,22 +3,18 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Languages } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+import { useState } from 'react';
 
-import { defaultLocale, type Locale, locales } from '@/i18n/config';
+import { type Locale, locales } from '@/i18n/config';
 import { cn } from '@/lib/utils';
-import { getUserLocale, setUserLocale } from '@/services/locale';
+import { setUserLocale } from '@/services/locale';
 
 export default function LocaleSwitcher() {
   const t = useTranslations('language');
   const router = useRouter();
-  const [currentLocale, setCurrentLocale] = useState<Locale>(defaultLocale);
+  const currentLocale = useLocale() as Locale;
   const [isTransitioning, setIsTransitioning] = useState(false);
-
-  useEffect(() => {
-    getUserLocale().then(setCurrentLocale);
-  }, []);
 
   async function handleLocaleChange(locale: Locale) {
     if (locale === currentLocale || isTransitioning) return;
@@ -27,7 +23,6 @@ export default function LocaleSwitcher() {
 
     try {
       await setUserLocale(locale);
-      setCurrentLocale(locale);
       router.refresh();
     } finally {
       setIsTransitioning(false);
