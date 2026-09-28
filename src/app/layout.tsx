@@ -8,9 +8,11 @@ import {
   JetBrains_Mono,
   Plus_Jakarta_Sans,
 } from 'next/font/google';
-import { getLocale } from 'next-intl/server';
+import { getLocale, getMessages } from 'next-intl/server';
 
+import Header from '@/components/layout/header';
 import SmoothCursor from '@/components/layout/smooth-cursor';
+import { IntlProvider } from '@/context/intl-provider';
 import { LenisProvider } from '@/context/lenis-provider';
 import { ThemeProvider } from '@/context/theme-provider';
 import { cn } from '@/lib/utils';
@@ -98,6 +100,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: LayoutProps<'/'>) {
   const locale = await getLocale();
+  const messages = await getMessages();
 
   return (
     <html
@@ -111,10 +114,15 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
       )}
     >
       <body>
-        <SmoothCursor />
-        <ThemeProvider>
-          <LenisProvider>{children}</LenisProvider>
-        </ThemeProvider>
+        <IntlProvider locale={locale} messages={messages}>
+          <SmoothCursor />
+          <ThemeProvider>
+            <LenisProvider>
+              <Header />
+              <main>{children}</main>
+            </LenisProvider>
+          </ThemeProvider>
+        </IntlProvider>
       </body>
       <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
     </html>
