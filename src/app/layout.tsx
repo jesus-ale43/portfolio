@@ -124,8 +124,8 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
         </IntlProvider>
 
         <SmoothCursor />
+        <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
       </body>
-      <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
     </html>
   );
 }
