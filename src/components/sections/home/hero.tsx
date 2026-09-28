@@ -15,7 +15,7 @@ export default async function Hero() {
 
           <h1
             id="hero-title"
-            className="font-editorial relative z-10 flex select-none flex-col text-[clamp(5rem,24vw,15.625rem)] leading-[0.85] tracking-[-0.04em] text-foreground sm:text-[clamp(5rem,13vw,15.625rem)]"
+            className="font-editorial relative z-10 flex select-none flex-col text-[clamp(5rem,24vw,15.625rem)] leading-[0.85] tracking-[-0.04em] text-foreground sm:text-[clamp(5rem,13vw,15.625rem)] pl-[0.065em]"
           >
             <span>Jesús</span>
             <span className="italic text-secondary">Alejandro</span>
