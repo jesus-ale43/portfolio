@@ -27,5 +27,18 @@
         }
       }
     }
+  },
+  "contact": {
+    "invitation": "DIRECT INVITATION // 02",
+    "title": "Say hello on Instagram",
+    "emailLabel": "DIRECT EMAIL",
+    "openSourceLabel": "OPEN SOURCE",
+    "professionalLabel": "PROFESSIONAL",
+    "baseLabel": "BASE",
+    "baseValue": "JOINVILLE, BRAZIL"
+  },
+  "footer": {
+    "rights": "MADE WITH LOVE BY JESÚS ALEJANDRO.",
+    "domain": "JESUSALE.COM"
   }
 }

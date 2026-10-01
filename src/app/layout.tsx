@@ -10,6 +10,7 @@ import {
 } from 'next/font/google';
 import { getLocale, getMessages } from 'next-intl/server';
 
+import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import SmoothCursor from '@/components/layout/smooth-cursor';
 import { gaId, siteUrl } from '@/constants/site';
@@ -120,6 +121,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
             <LenisProvider>
               <Header />
               <main>{children}</main>
+              <Footer />
             </LenisProvider>
           </ThemeProvider>
         </IntlProvider>

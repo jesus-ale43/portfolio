@@ -27,5 +27,18 @@
         }
       }
     }
+  },
+  "contact": {
+    "invitation": "CONVITE DIRETO // 02",
+    "title": "Dá um oi no Instagram",
+    "emailLabel": "EMAIL DIRETO",
+    "openSourceLabel": "CÓDIGO ABERTO",
+    "professionalLabel": "PROFISSIONAL",
+    "baseLabel": "BASE",
+    "baseValue": "JOINVILLE, BRASIL"
+  },
+  "footer": {
+    "rights": "FEITO COM AMOR POR JESÚS ALEJANDRO.",
+    "domain": "JESUSALE.COM"
   }
 }

@@ -27,5 +27,18 @@
         }
       }
     }
+  },
+  "contact": {
+    "invitation": "INVITACIÓN DIRECTA // 02",
+    "title": "Saludame en Instagram",
+    "emailLabel": "CORREO DIRECTO",
+    "openSourceLabel": "CÓDIGO ABIERTO",
+    "professionalLabel": "PROFESIONAL",
+    "baseLabel": "BASE",
+    "baseValue": "JOINVILLE, BRASIL"
+  },
+  "footer": {
+    "rights": "HECHO CON AMOR POR JESÚS ALEJANDRO.",
+    "domain": "JESUSALE.COM"
   }
 }
