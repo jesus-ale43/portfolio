@@ -5,5 +5,10 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": "explicit",
     "source.fixAll.biome": "explicit"
-  }
+  },
+  "i18n-ally.localesPaths": [
+    "messages",
+    "src/i18n",
+    "src/components/layout/i18n"
+  ]
 }
