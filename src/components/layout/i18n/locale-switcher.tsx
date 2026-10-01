@@ -48,6 +48,7 @@ export default function LocaleSwitcher() {
 
       <MenuItems
         transition
+        modal={false}
         anchor={{ to: 'bottom end', gap: '0.75rem' }}
         className="w-36 border border-border bg-background p-1 shadow-xl transition duration-150 ease-out data-closed:-translate-y-2 data-closed:opacity-0 focus:outline-none"
       >
