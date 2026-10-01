@@ -12,6 +12,7 @@ import { getLocale, getMessages } from 'next-intl/server';
 
 import Header from '@/components/layout/header';
 import SmoothCursor from '@/components/layout/smooth-cursor';
+import { gaId, siteUrl } from '@/constants/site';
 import { IntlProvider } from '@/context/intl-provider';
 import { LenisProvider } from '@/context/lenis-provider';
 import { ThemeProvider } from '@/context/theme-provider';
@@ -40,10 +41,10 @@ const jetbrains = JetBrains_Mono({
   display: 'swap',
 });
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_MEASUREMENT_ID = gaId;
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jesusale.com'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Jesús Alejandro · Web Developer',
     template: '%s · Jesús Alejandro',
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: 'Jesús Alejandro',
-      url: 'https://jesusale.com',
+      url: siteUrl,
     },
   ],
   alternates: {
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Jesús Alejandro · Web Developer',
     description: 'Developer and industrial automation student.',
-    url: 'https://jesusale.com',
+    url: siteUrl,
     siteName: 'Jesús Alejandro Portfolio',
     locale: 'en_US',
     alternateLocale: ['es_ES', 'es_MX', 'pt_BR', 'pt_PT'],
@@ -93,7 +94,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.png', media: '(prefers-color-scheme: dark)' },
+      { url: '/favicon-light.png', media: '(prefers-color-scheme: dark)' },
       { url: '/favicon-dark.png', media: '(prefers-color-scheme: light)' },
     ],
   },

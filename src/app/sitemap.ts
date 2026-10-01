@@ -1,9 +1,11 @@
 import type { MetadataRoute } from 'next';
 
+import { siteUrl } from '@/constants/site';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://jesusale.com',
+      url: siteUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
