@@ -80,9 +80,14 @@ export async function getUserLocale(): Promise<Locale> {
 }
 
 export async function setUserLocale(locale: Locale) {
+  if (!isLocale(locale)) {
+    throw new Error(`Invalid locale: ${locale}`);
+  }
+
   (await cookies()).set(COOKIE_NAME, locale, {
     path: '/',
     maxAge: 60 * 60 * 24 * 365,
     sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
   });
 }
