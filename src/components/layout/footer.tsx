@@ -17,7 +17,7 @@ export default async function Footer() {
               </span>
               <h2
                 id="contact-title"
-                className="font-editorial text-6xl leading-none text-foreground sm:text-8xl lg:text-[9vw]"
+                className="font-editorial text-6xl leading-none text-foreground sm:text-8xl lg:text-[clamp(6rem,9vw,11rem)]"
               >
                 <a
                   href={contactLinks.instagram}
@@ -28,7 +28,7 @@ export default async function Footer() {
                   <span className="leading-none">{tContact('title')}</span>
                   <span
                     aria-hidden="true"
-                    className="ml-4 inline-block transform font-sans text-4xl font-light transition-transform duration-300 group-hover:translate-x-3 group-hover:-translate-y-3 motion-reduce:transform-none sm:ml-6 sm:text-6xl lg:text-[7vw]"
+                    className="ml-4 inline-block transform font-sans text-4xl font-light transition-transform duration-300 group-hover:translate-x-3 group-hover:-translate-y-3 motion-reduce:transform-none sm:ml-6 sm:text-6xl lg:text-[clamp(4rem,7vw,8rem)]"
                   >
                     ↗
                   </span>
