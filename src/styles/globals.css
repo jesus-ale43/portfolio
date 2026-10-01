@@ -155,6 +155,10 @@
     max-width: var(--container-wide);
   }
 
+  .surface-background {
+    background-color: var(--background);
+  }
+
   #cursor-ring::after {
     position: absolute;
     inset: -1px;
