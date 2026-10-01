@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import LocaleSwitcher from '@/components/layout/i18n/locale-switcher';
 import ThemeToggle from '@/components/layout/theme/theme-toggle';
 import { defaultTimeZone } from '@/i18n/config';
+import { cn } from '@/lib/utils';
 
 export default function Header() {
   const locale = useLocale();
@@ -16,6 +17,7 @@ export default function Header() {
     const formatter = new Intl.DateTimeFormat(locale, {
       timeZone: defaultTimeZone,
       hour: '2-digit',
+      hourCycle: 'h23',
       minute: '2-digit',
       second: '2-digit',
     });
@@ -26,9 +28,17 @@ export default function Header() {
 
     update();
 
-    const interval = setInterval(update, 1000);
+    const msToNextSecond = 1000 - new Date().getMilliseconds();
+    let interval: ReturnType<typeof setInterval> | undefined;
+    const timeout = setTimeout(() => {
+      update();
+      interval = setInterval(update, 1000);
+    }, msToNextSecond);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearTimeout(timeout);
+      if (interval) clearInterval(interval);
+    };
   }, [locale]);
 
   return (
@@ -54,8 +64,15 @@ export default function Header() {
         <div className="flex items-center gap-8 micro-label leading-none">
           <div className="hidden md:flex items-center gap-2">
             <span className="text-muted">JOINVILLE, BR</span>
-            <span id="clock" className="font-mono text-foreground leading-none">
-              {time ?? '12:00:00'}
+            <span
+              id="clock"
+              suppressHydrationWarning
+              className={cn(
+                'w-[8ch] shrink-0 text-right font-mono tabular-nums text-foreground leading-none transition-opacity duration-500',
+                time ? 'opacity-100' : 'opacity-0',
+              )}
+            >
+              {time ?? '00:00:00'}
             </span>
           </div>
 
