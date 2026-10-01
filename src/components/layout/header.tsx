@@ -72,13 +72,13 @@ export default function Header() {
                 time ? 'opacity-100' : 'opacity-0',
               )}
             >
-              {time ?? '00:00:00'}
+              {time ?? <span aria-hidden="true">00:00:00</span>}
             </span>
           </div>
 
           <div className="hidden items-center gap-2 md:flex">
             <span className="relative flex size-2 shrink-0">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-foreground/60 opacity-75" />
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-foreground/60 opacity-75 motion-reduce:animate-none" />
               <span className="relative inline-flex size-2 rounded-full bg-foreground" />
             </span>
 
