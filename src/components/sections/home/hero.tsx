@@ -5,7 +5,11 @@ export default async function Hero() {
   const capabilities = t.raw('capabilities.items') as string[];
 
   return (
-    <section id="hero" className="overflow-hidden" aria-labelledby="hero-title">
+    <section
+      id="hero"
+      className="relative z-10 overflow-visible"
+      aria-labelledby="hero-title"
+    >
       <div className="container-px relative isolate flex min-h-[min(100svh,64rem)] flex-col justify-start pt-28 sm:justify-end lg:pt-36">
         <div className="relative flex items-end">
           <div
