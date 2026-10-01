@@ -5,7 +5,7 @@ import Lenis from 'lenis';
 import { usePathname } from 'next/navigation';
 import { createContext, useEffect, useRef, useState } from 'react';
 
-export const LenisContext = createContext<Lenis | null>(null);
+const LenisContext = createContext<Lenis | null>(null);
 
 export function LenisProvider({
   children,
