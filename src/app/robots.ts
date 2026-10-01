@@ -1,12 +1,14 @@
 import type { MetadataRoute } from 'next';
 
+import { siteUrl } from '@/constants/site';
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: `https://jesusale.com/sitemap.xml`,
-    host: 'https://jesusale.com',
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   };
 }
